@@ -3,6 +3,7 @@ package com.picpay.desafio.android
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.picpay.desafio.android.domain.entities.User
+import com.picpay.desafio.data.remote.PicPayService
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import retrofit2.Call
