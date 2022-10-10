@@ -1,20 +1,35 @@
 # PicPay - Desafio Android
 
 <img src="https://github.com/mobilepicpay/desafio-android/blob/master/desafio-picpay.gif" width="300"/>
-Melhorias implementadas:
+
+## Melhorias implementadas:
 - Reestruturação para uma arquitetura baseada em Clean Architecture + MVVM;
-- Criação de um módulo para a data layer, responsável por puxar dados das data sources (no caso, a API) e chamadas de rede;
+
+- Criação de um módulo para a data layer, responsável por puxar dados das data sources (no caso, a API) e fazer chamadas de rede;
+
 - Criação de um módulo para a domain layer, com as entities (models), use cases e interface para o repositório (que é implementado na data layer);
+
 - Utilização de arquitetura MVVM dentro do módulo app, que serve como presentation layer;
+
 - Utilização de reactive programming com Coroutines e StateFlow para controlar o estado da view;
+
 - Utilização de data binding para atualizar a View a partir da ViewModel;
+
 - Separação de responsabilidades com base em conceitos SOLID;
+
 - Injeção de dependência com Koin;
+
 - Mapeado objetos JSON da API Rest com Moshi;
+
 - Troca de Picasso por Coil para carregamento de imagens;
 
-TODO:
+- Removação de dependências não utilizadas.
+
+
+### TODO:
+
 [ ] Escrever testes unitários
+
 [ ] Escrever testes de UI
 
 
