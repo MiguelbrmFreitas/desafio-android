@@ -1,6 +1,24 @@
 # PicPay - Desafio Android
 
 <img src="https://github.com/mobilepicpay/desafio-android/blob/master/desafio-picpay.gif" width="300"/>
+Melhorias implementadas:
+- Reestruturação para uma arquitetura baseada em Clean Architecture + MVVM;
+- Criação de um módulo para a data layer, responsável por puxar dados das data sources (no caso, a API) e chamadas de rede;
+- Criação de um módulo para a domain layer, com as entities (models), use cases e interface para o repositório (que é implementado na data layer);
+- Utilização de arquitetura MVVM dentro do módulo app, que serve como presentation layer;
+- Utilização de reactive programming com Coroutines e StateFlow para controlar o estado da view;
+- Utilização de data binding para atualizar a View a partir da ViewModel;
+- Separação de responsabilidades com base em conceitos SOLID;
+- Injeção de dependência com Koin;
+- Mapeado objetos JSON da API Rest com Moshi;
+- Troca de Picasso por Coil para carregamento de imagens;
+
+TODO:
+[ ] Escrever testes unitários
+[ ] Escrever testes de UI
+
+
+-----
 
 Um dos desafios de qualquer time de desenvolvimento é lidar com código legado e no PicPay isso não é diferente. Um dos objetivos de trazer os melhores desenvolvedores do Brasil é atacar o problema. Para isso, essa etapa do processo consiste numa proposta de solução para o desafio abaixo e você pode escolher a melhor forma de resolvê-lo, de acordo com sua comodidade e disponibilidade de tempo:
 - Resolver o desafio previamente, e explicar sua abordagem no momento da entrevista.
