@@ -1,5 +1,6 @@
 package com.picpay.desafio.android.ui.main.viewmodel
 
+import android.view.View
 import androidx.lifecycle.viewModelScope
 import com.picpay.desafio.android.domain.result.ApiResult
 import com.picpay.desafio.android.domain.usecases.GetUsersUserCase
@@ -21,15 +22,19 @@ class MainViewModel(private val getUsersUserCase: GetUsersUserCase, val mainView
             when (val response = getUsersUserCase.invoke()) {
                 is ApiResult.Success -> {
                     response.data.let { userList ->
-                        mainViewModelState._recyclerUsers.value = RecyclerComponent(
-                            adapter = userListAdapter
-                        )
+                        mainViewModelState.apply {
+                            recyclerUsers.value = RecyclerComponent(
+                                adapter = userListAdapter
+                            )
+
+                            progressVisibility.value = View.GONE
+                        }
 
                         userListAdapter.users = userList
                     }
                 }
                 is ApiResult.Failure -> {
-
+                    mainViewModelState.progressVisibility.value = View.GONE
                 }
             }
         }
