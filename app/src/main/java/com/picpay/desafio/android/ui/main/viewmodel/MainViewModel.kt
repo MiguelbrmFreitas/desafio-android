@@ -35,6 +35,8 @@ class MainViewModel(private val getUsersUserCase: GetUsersUserCase, val mainView
                 }
                 is ApiResult.Failure -> {
                     mainViewModelState.progressVisibility.value = View.GONE
+
+                    //TODO: Criar snackbar de erro
                 }
             }
         }

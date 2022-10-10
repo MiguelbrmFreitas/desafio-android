@@ -29,10 +29,6 @@ val remoteDataModule = module {
 
 }
 
-fun createMoshiBuilder(): Moshi {
-    return Moshi.Builder().build()
-}
-
 fun createLoggingInterceptor(): HttpLoggingInterceptor {
     val loggingInterceptor = HttpLoggingInterceptor()
     loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY

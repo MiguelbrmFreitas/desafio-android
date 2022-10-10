@@ -1,7 +1,6 @@
 package com.picpay.desafio.android.ui.main.adapter
 
 import android.content.Context
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import coil.load
