@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.StateFlow
 
 data class MainViewModelState
 (
-    private val _recyclerUsers: MutableStateFlow<RecyclerComponent> = MutableStateFlow(RecyclerComponent()),
+    val _recyclerUsers: MutableStateFlow<RecyclerComponent> = MutableStateFlow(RecyclerComponent()),
     val recyclerUsers: StateFlow<RecyclerComponent> = _recyclerUsers
 )

@@ -15,10 +15,10 @@ class PicPayRepositoryImpl(private val picPayService: PicPayService) : PicPayRep
                 response.body()?.let { users ->
                     return@withContext ApiResult.Success(users)
                 } ?: kotlin.run {
-                    return@withContext ApiResult.Failure(Exception(response.message()))
+                    return@withContext ApiResult.Failure(response.message())
                 }
             } else {
-                return@withContext ApiResult.Failure(Exception(response.message()))
+                return@withContext ApiResult.Failure(response.message())
             }
         }
 
