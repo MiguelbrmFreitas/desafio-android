@@ -1,6 +1,5 @@
 package com.picpay.desafio.android.ui.main.activity
 
-import android.os.Bundle
 import com.picpay.desafio.android.R
 import com.picpay.desafio.android.ui.base.BaseActivity
 import com.picpay.desafio.android.ui.main.viewmodel.MainViewModel
@@ -15,14 +14,9 @@ class MainActivity() : BaseActivity<MainViewModel>() {
 
     override fun bindingVariable() = BR.viewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.startView()
-    }
-
     override fun onResume() {
         super.onResume()
 
-//        viewModel.startView()
+        viewModel.startView()
     }
 }

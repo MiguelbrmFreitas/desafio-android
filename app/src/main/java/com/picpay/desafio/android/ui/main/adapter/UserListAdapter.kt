@@ -2,9 +2,11 @@ package com.picpay.desafio.android.ui.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.R
+import com.picpay.desafio.android.databinding.ListItemUserBinding
 import com.picpay.desafio.android.domain.entities.User
 
 class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
@@ -22,8 +24,12 @@ class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserListItemViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_user, parent, false)
+        val view = DataBindingUtil.inflate<ListItemUserBinding>(
+            LayoutInflater.from(parent.context),
+            R.layout.list_item_user,
+            parent,
+            false
+        )
 
         return UserListItemViewHolder(view)
     }
