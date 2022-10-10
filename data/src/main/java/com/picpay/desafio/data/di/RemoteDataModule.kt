@@ -67,10 +67,10 @@ fun createService(retrofit: Retrofit): PicPayService {
     return retrofit.create(PicPayService::class.java)
 }
 
-fun createMcDonaldsRepository(picPayService: PicPayService): PicPayRepository {
+fun createPicPayRepository(picPayService: PicPayService): PicPayRepository {
     return PicPayRepositoryImpl(picPayService)
 }
 
-fun createGetMenusUseCase(picPayRepository: PicPayRepository): GetUsersUserCase {
+fun createGetUsersUseCase(picPayRepository: PicPayRepository): GetUsersUserCase {
     return GetUsersUserCase(picPayRepository)
 }

@@ -1,23 +1,30 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.ui.main.activity
 
 import android.view.View
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.picpay.desafio.android.domain.entities.User
+import com.picpay.desafio.android.R
+import com.picpay.desafio.android.ui.base.BaseActivity
+import com.picpay.desafio.android.ui.main.adapter.UserListAdapter
+import com.picpay.desafio.android.ui.main.viewmodel.MainViewModel
 import com.picpay.desafio.data.remote.PicPayService
 import okhttp3.OkHttpClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.picpay.desafio.android.BR
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity() : BaseActivity<MainViewModel>() {
+
+    override val viewModel: MainViewModel by viewModel(owner = this)
+
+    override fun layoutId() = R.layout.activity_main
+
+    override fun bindingVariable() = BR.viewModel
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
