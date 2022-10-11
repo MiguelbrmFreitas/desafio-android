@@ -16,7 +16,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 
 private const val TIME_OUT = 30L
-private val BASE_URL = "https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/"
+private const val BASE_URL = "https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/"
 
 val remoteDataModule = module {
     single { createService(get()) }
